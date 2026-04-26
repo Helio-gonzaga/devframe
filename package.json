@@ -2,8 +2,11 @@
   "name": "devframe",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
-    "dev": "next dev",
+    "dev:next": "next dev -p 3000",
+    "dev:electron": "electron .",
+    "dev": "concurrently \"npm run dev:next\" \"wait-on http://localhost:3000 && npm run dev:electron\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -14,11 +17,15 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.19.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
+    "electron": "^40.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5",
+    "wait-on": "^9.0.3"
   }
 }

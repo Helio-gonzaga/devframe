@@ -1,0 +1,133 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.device {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.statusBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  font-family: var(--font-roboto-condensed), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  height: 28px;
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+
+  background: black;
+  /* 👈 importante */
+
+  z-index: 1000;
+  pointer-events: none;
+    /* 🔥 ISSO PERMITE ARRASTAR A JANELA */
+  -webkit-app-region: drag;
+}
+
+
+/* ÍCONES */
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.battery {
+  width: 18px;
+  height: 9px;
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  position: relative;
+}
+
+/* IFRAME */
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+
+  /* 👇 SIMULA SAFE AREA DO iOS */
+  padding-top: 28px;
+  box-sizing: border-box;
+}
+
+.statusLeft {
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+
+/* BATERIA */
+.battery {
+  position: relative;
+  width: 22px;
+  height: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+
+  margin-left: 6px;
+  box-sizing: border-box;
+}
+
+/* nível da bateria */
+.batteryLevel {
+  height: 100%;
+  width: 75%;
+  background: rgb(255, 255, 255);
+
+  transition: width 0.3s ease;
+}
+
+/* WIFI */
+.wifi {
+  position: relative;
+  width: 14px;
+  height: 10px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-left: 6px;
+}
+
+.wifi span {
+  width: 2px;
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+  opacity: 0.9;
+}
+
+/* barras em altura crescente */
+.wifi span:nth-child(1) {
+  height: 4px;
+  opacity: 0.5;
+}
+
+.wifi span:nth-child(2) {
+  height: 7px;
+  opacity: 0.75;
+}
+
+.wifi span:nth-child(3) {
+  height: 10px;
+}
