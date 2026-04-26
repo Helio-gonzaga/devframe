@@ -1,6 +1,7 @@
 "use client";
 
-const PREVIEW_URL = process.env.NEXT_PUBLIC_PREVIEW_URL!;
+// URL da aplicacao Next.js para o iframe de preview
+const PREVIEW_URL = "http://localhost:3000";
 
 import styles from "./MobileFrame.module.css";
 import { DEVICES } from "@/lib/devices";

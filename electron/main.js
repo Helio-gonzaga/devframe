@@ -15,7 +15,8 @@ function createWindow() {
     show: false,
   });
 
-  const url = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    // Define a URL do Next.js diretamente no código
+    const url = "http://localhost:8080";
   win.loadURL(url).catch((err) => {
     console.error("Falha ao carregar a URL:", err);
   });
